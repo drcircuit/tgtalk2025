@@ -1,0 +1,12 @@
+let s = Math.sin(val / wavelength);
+        let result = Math.floor(max + max * s);
+        return result;
+
+// calculate sinoids 
+        let s1 = sinusoid(x + t, 100, 255);
+        let s2 = sinusoid(y - t, 100, 255);
+        let s3 = sinusoid((x + y)*sin(t*0.01), 220, 255);
+
+        let sinSum = s1 + s2 + s3;
+        let color = firePalette256[(palIdx + sinSum) % 256];
+        bufferPixel(x, y, color);
